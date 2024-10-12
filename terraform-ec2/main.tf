@@ -24,8 +24,10 @@ module "security_group" {
 # Call the EC2 instance module
 module "ec2_instance" {
   source                 = "./modules/ec2_instance"
+  region                 = var.region
   ami                    = var.ami
   instance_type          = var.instance_type
+  secret_arn             = module.secrets_manager.secret_arn
   key_name               = module.ssh_key.key_name
   security_group_id      = module.security_group.security_group_id
 }

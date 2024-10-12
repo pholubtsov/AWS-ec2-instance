@@ -1,3 +1,8 @@
+variable "region" {
+  type        = string
+  description = "Region for creating the instance"
+}
+
 variable "ami" {
   type        = string
   description = "AMI ID for the instance"
@@ -16,4 +21,9 @@ variable "key_name" {
 variable "security_group_id" {
   type        = string
   description = "ID of the security group"
+}
+
+variable "secret_arn" {
+  type        = string
+  description = "ARN of the secret in AWS Secrets Manager"
 }
